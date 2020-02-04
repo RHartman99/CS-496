@@ -1,0 +1,2 @@
+let f i j = i (j+1)++
+val f : (int -> 'a) -> int -> 'a = <fun>
