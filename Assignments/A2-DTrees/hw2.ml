@@ -1,0 +1,1 @@
+type dTree = Node of 'a  * 'a dTree * 'a dTree | Leaf of 'b
