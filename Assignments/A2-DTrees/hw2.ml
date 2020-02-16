@@ -1,7 +1,10 @@
+(* Ryan Hartman *)
+(* I pledge my honor that I have abided by the Stevens Honor System. *)
+
 type dTree = Node of char * dTree * dTree | Leaf of int
 
 let tLeft =  Node('w', Node('x', Leaf(2), Leaf(5)), Leaf(8))
-let tRight = Node('w', Node('x', Leaf(2), Leaf(5)), Node('y', Leaf(7), Leaf(8)))
+let tRight = Node('w', Node('x', Leaf(2), Leaf(5)), Node('y', Leaf(7), Leaf(5)))
 
 let bin_func = (['x';'y';'z'], [([0;0;0] , 0); 
                                 ([0;0;1] , 1); 
@@ -11,6 +14,8 @@ let bin_func = (['x';'y';'z'], [([0;0;0] , 0);
                                 ([1;0;1] , 0); 
                                 ([1;1;0] , 0); 
                                 ([1;1;1] , 1)])
+
+let bin_func2 = [([0;1;1], 5)]
 
 (* Part 1: Basic dTree functions *)
 
@@ -49,16 +54,16 @@ let rec list_to_tree : char list -> dTree = fun l ->
   | [] -> Leaf(0)
   | h::t -> Node(h, list_to_tree t, list_to_tree t)
 
-let rec parse_bool_func : ((int list) * int) list -> int list -> int = fun f l  ->
+let rec parse_bool_func : ((int list) * int) list -> int list -> int -> int = fun f l def  ->
   match f with
-  | (func, d)::t -> if func = l then d else parse_bool_func t l
-  | [] -> 102
+  | (func, d)::t -> if func = l then d else parse_bool_func t l def
+  | [] -> def
 
 let replace_leaf_at : dTree -> ((int list) * int) list -> dTree = fun t f ->
   let rec replace_leaves : dTree -> ((int list) * int) list -> int list -> dTree = fun t f l ->
-    match t with 
+    match t with
     | Node(d, lt, rt) -> Node(d, replace_leaves lt f (l@[0]), replace_leaves rt f (l@[1]))
-    | Leaf(old) -> Leaf(parse_bool_func f l) in
+    | Leaf(old) -> Leaf(parse_bool_func f l old) in
   replace_leaves t f []
 
 let bf_to_dTree : ((char list) * (((int list) * int) list)) -> dTree = fun f ->
