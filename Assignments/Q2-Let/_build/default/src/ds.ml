@@ -73,8 +73,6 @@ let rec extend_env_list : string list -> exp_val list -> env ea_result = fun ids
 
 (* operations on expressed values *)
 
-
-
 let int_of_numVal : exp_val -> int ea_result =  function
   |  NumVal n -> return n
   | _ -> error "Expected a number!"
@@ -105,6 +103,8 @@ let rec string_of_env'  = function
   | EmptyEnv -> ""
   | ExtendEnv(id,v,env) -> string_of_env' env^" ("^id^","^string_of_expval v^")\n"
 
+let string_of_env : string ea_result = fun env ->
+  Ok ("Environment:\n"^ string_of_env' env)
 
 let rec sequence: (exp_val ea_result) list -> (exp_val list) ea_result = fun rs ->
   match rs with
@@ -112,13 +112,3 @@ let rec sequence: (exp_val ea_result) list -> (exp_val list) ea_result = fun rs 
   | h::t -> h >>= fun n ->
     sequence t >>= fun m ->
     return @@ n::m
-
-let rec extend_env_list : string list -> exp_val list -> env ea_result = fun ids evs ->
-  match ids,evs with
-  | [],[] -> lookup_env
-  | id::ids, ev::evs when List.mem id ids -> error "duplicate identifiers"
-  | id::ids, ev::evs -> extend_env id ev >>+ extend_env_list ids evs
-  | _,_ -> error "extend_env_list: Arguments do not match parameters!"
-
-let string_of_env : string ea_result = fun env ->
-  Ok ("Environment:\n"^ string_of_env' env)

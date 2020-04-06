@@ -81,6 +81,10 @@ let bool_of_boolVal : exp_val -> bool ea_result =  function
   |  BoolVal b -> return b
   | _ -> error "Expected a boolean!"
 
+let tuple_of_tupleVal : exp_val -> (exp_val list) ea_result = function
+  | TupleVal t -> return t
+  | _ -> error "Expected a tuple!"
+
 let rec string_of_list_of_strings = function
   | [] -> ""
   | [id] -> id
@@ -101,3 +105,10 @@ let rec string_of_env'  = function
 
 let string_of_env : string ea_result = fun env ->
   Ok ("Environment:\n"^ string_of_env' env)
+
+let rec sequence: (exp_val ea_result) list -> (exp_val list) ea_result = fun rs ->
+  match rs with
+  | [] -> return []
+  | h::t -> h >>= fun n ->
+    sequence t >>= fun m ->
+    return @@ n::m

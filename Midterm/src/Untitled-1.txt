@@ -1,0 +1,4 @@
+interp "let z = 0 
+        in let prod = proc(x) { proc(y) {x*y} }
+        in letrec f(n) = if zero?(n) then 1 else ((prod n) (f (n-1))) 
+        in f";;

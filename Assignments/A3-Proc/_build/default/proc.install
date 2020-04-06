@@ -1,0 +1,35 @@
+lib: [
+  "_build/install/default/lib/proc/META" {"META"}
+  "_build/install/default/lib/proc/ast.ml" {"ast.ml"}
+  "_build/install/default/lib/proc/ds.ml" {"ds.ml"}
+  "_build/install/default/lib/proc/interp.ml" {"interp.ml"}
+  "_build/install/default/lib/proc/lexer.ml" {"lexer.ml"}
+  "_build/install/default/lib/proc/opam" {"opam"}
+  "_build/install/default/lib/proc/parser.ml" {"parser.ml"}
+  "_build/install/default/lib/proc/parser.mli" {"parser.mli"}
+  "_build/install/default/lib/proc/proc.a" {"proc.a"}
+  "_build/install/default/lib/proc/proc.cma" {"proc.cma"}
+  "_build/install/default/lib/proc/proc.cmi" {"proc.cmi"}
+  "_build/install/default/lib/proc/proc.cmt" {"proc.cmt"}
+  "_build/install/default/lib/proc/proc.cmx" {"proc.cmx"}
+  "_build/install/default/lib/proc/proc.cmxa" {"proc.cmxa"}
+  "_build/install/default/lib/proc/proc.cmxs" {"proc.cmxs"}
+  "_build/install/default/lib/proc/proc.dune" {"proc.dune"}
+  "_build/install/default/lib/proc/proc.ml-gen" {"proc.ml-gen"}
+  "_build/install/default/lib/proc/proc__Ast.cmi" {"proc__Ast.cmi"}
+  "_build/install/default/lib/proc/proc__Ast.cmt" {"proc__Ast.cmt"}
+  "_build/install/default/lib/proc/proc__Ast.cmx" {"proc__Ast.cmx"}
+  "_build/install/default/lib/proc/proc__Ds.cmi" {"proc__Ds.cmi"}
+  "_build/install/default/lib/proc/proc__Ds.cmt" {"proc__Ds.cmt"}
+  "_build/install/default/lib/proc/proc__Ds.cmx" {"proc__Ds.cmx"}
+  "_build/install/default/lib/proc/proc__Interp.cmi" {"proc__Interp.cmi"}
+  "_build/install/default/lib/proc/proc__Interp.cmt" {"proc__Interp.cmt"}
+  "_build/install/default/lib/proc/proc__Interp.cmx" {"proc__Interp.cmx"}
+  "_build/install/default/lib/proc/proc__Lexer.cmi" {"proc__Lexer.cmi"}
+  "_build/install/default/lib/proc/proc__Lexer.cmt" {"proc__Lexer.cmt"}
+  "_build/install/default/lib/proc/proc__Lexer.cmx" {"proc__Lexer.cmx"}
+  "_build/install/default/lib/proc/proc__Parser.cmi" {"proc__Parser.cmi"}
+  "_build/install/default/lib/proc/proc__Parser.cmt" {"proc__Parser.cmt"}
+  "_build/install/default/lib/proc/proc__Parser.cmti" {"proc__Parser.cmti"}
+  "_build/install/default/lib/proc/proc__Parser.cmx" {"proc__Parser.cmx"}
+]

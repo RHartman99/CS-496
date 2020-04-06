@@ -1,0 +1,45 @@
+# dune utop src
+# OCAMLPARAM: unset
+$ /usr/bin/nproc > /tmp/dune818cd7.output 2> /dev/null
+$ /usr/bin/ocamlc.opt -config > /tmp/dune07fc6e.output
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl src/.utop/utop.ml) > _build/default/src/.utop/utop.ml.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl src/ast.ml) > _build/default/src/.rec.objs/ast.ml.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl src/ds.ml) > _build/default/src/.rec.objs/ds.ml.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl src/interp.ml) > _build/default/src/.rec.objs/interp.ml.d
+$ (cd _build/default && /usr/bin/ocamllex.opt -q -o src/lexer.ml src/lexer.mll)
+$ (cd _build/default/src && /home/ryan/.opam/system/bin/menhir parser.mly --base parser)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @a-4-29-40-41-42-44-45-48-58-59-60-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -49 -g -bin-annot -I src/.rec.objs -I src/.rec.objs/.private -no-alias-deps -opaque -o src/.rec.objs/rec.cmo -c -impl src/rec.ml-gen)
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl src/lexer.ml) > _build/default/src/.rec.objs/lexer.ml.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -intf src/parser.mli) > _build/default/src/.rec.objs/parser.mli.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl src/parser.ml) > _build/default/src/.rec.objs/parser.ml.d
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @a-4-29-40-41-42-44-45-48-58-59-60-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I src/.rec.objs -I src/.rec.objs/.private -no-alias-deps -opaque -open Rec -o src/.rec.objs/rec__Ast.cmo -c -impl src/ast.ml)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @a-4-29-40-41-42-44-45-48-58-59-60-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I src/.rec.objs -I src/.rec.objs/.private -no-alias-deps -opaque -open Rec -o src/.rec.objs/rec__Parser.cmi -c -intf src/parser.mli)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @a-4-29-40-41-42-44-45-48-58-59-60-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I src/.rec.objs -I src/.rec.objs/.private -no-alias-deps -opaque -open Rec -o src/.rec.objs/rec__Ds.cmo -c -impl src/ds.ml)
+> File "src/ds.ml", line 113, characters 27-391:
+> Warning 8: this pattern-matching is not exhaustive.
+> Here is an example of a case that is not matched:
+> ListVal _
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @a-4-29-40-41-42-44-45-48-58-59-60-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I src/.rec.objs -I src/.rec.objs/.private -no-alias-deps -opaque -open Rec -o src/.rec.objs/rec__Lexer.cmo -c -impl src/lexer.ml)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @a-4-29-40-41-42-44-45-48-58-59-60-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I src/.rec.objs -I src/.rec.objs/.private -no-alias-deps -opaque -open Rec -o src/.rec.objs/rec__Interp.cmo -c -impl src/interp.ml)
+> File "src/interp.ml", line 107, characters 9-11:
+> Warning 27: unused variable e1.
+> File "src/interp.ml", line 107, characters 12-15:
+> Warning 27: unused variable lte.
+> File "src/interp.ml", line 107, characters 16-19:
+> Warning 27: unused variable rte.
+> File "src/interp.ml", line 109, characters 10-16:
+> Warning 27: unused variable target.
+> File "src/interp.ml", line 109, characters 17-26:
+> Warning 27: unused variable emptycase.
+> File "src/interp.ml", line 109, characters 27-30:
+> Warning 27: unused variable id1.
+> File "src/interp.ml", line 109, characters 31-34:
+> Warning 27: unused variable id2.
+> File "src/interp.ml", line 109, characters 35-38:
+> Warning 27: unused variable id3.
+> File "src/interp.ml", line 109, characters 39-47:
+> Warning 27: unused variable nodecase.
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @a-4-29-40-41-42-44-45-48-58-59-60-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -24 -g -bin-annot -I src/.utop -I /home/ryan/.opam/system/lib/bytes -I /home/ryan/.opam/system/lib/camomile -I /home/ryan/.opam/system/lib/camomile/default_config -I /home/ryan/.opam/system/lib/camomile/dyn -I /home/ryan/.opam/system/lib/camomile/lib_default -I /home/ryan/.opam/system/lib/camomile/library -I /home/ryan/.opam/system/lib/findlib -I /home/ryan/.opam/system/lib/lambda-term -I /home/ryan/.opam/system/lib/lwt -I /home/ryan/.opam/system/lib/lwt/unix -I /home/ryan/.opam/system/lib/lwt_log -I /home/ryan/.opam/system/lib/lwt_log/core -I /home/ryan/.opam/system/lib/lwt_react -I /home/ryan/.opam/system/lib/react -I /home/ryan/.opam/system/lib/result -I /home/ryan/.opam/system/lib/utop -I /home/ryan/.opam/system/lib/zed -I /usr/lib/ocaml/compiler-libs -I /usr/lib/ocaml/threads -I src/.rec.objs -no-alias-deps -o src/.utop/utop.cmo -c -impl src/.utop/utop.ml)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @a-4-29-40-41-42-44-45-48-58-59-60-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I src/.rec.objs -I src/.rec.objs/.private -intf-suffix .ml -no-alias-deps -opaque -open Rec -o src/.rec.objs/rec__Parser.cmo -c -impl src/parser.ml)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @a-4-29-40-41-42-44-45-48-58-59-60-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -a -o src/rec.cma src/.rec.objs/rec.cmo src/.rec.objs/rec__Ast.cmo src/.rec.objs/rec__Parser.cmo src/.rec.objs/rec__Lexer.cmo src/.rec.objs/rec__Ds.cmo src/.rec.objs/rec__Interp.cmo)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @a-4-29-40-41-42-44-45-48-58-59-60-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -24 -g -o src/.utop/utop.exe -custom -linkall -warn-error -31 -I /home/ryan/.opam/system/lib/bytes -I /home/ryan/.opam/system/lib/camomile -I /home/ryan/.opam/system/lib/camomile/default_config -I /home/ryan/.opam/system/lib/camomile/dyn -I /home/ryan/.opam/system/lib/camomile/lib_default -I /home/ryan/.opam/system/lib/camomile/library -I /home/ryan/.opam/system/lib/findlib -I /home/ryan/.opam/system/lib/lambda-term -I /home/ryan/.opam/system/lib/lwt -I /home/ryan/.opam/system/lib/lwt/unix -I /home/ryan/.opam/system/lib/lwt_log -I /home/ryan/.opam/system/lib/lwt_log/core -I /home/ryan/.opam/system/lib/lwt_react -I /home/ryan/.opam/system/lib/react -I /home/ryan/.opam/system/lib/result -I /home/ryan/.opam/system/lib/utop -I /home/ryan/.opam/system/lib/zed -I /usr/lib/ocaml/compiler-libs -I /usr/lib/ocaml/threads -I src /usr/lib/ocaml/compiler-libs/ocamlcommon.cma /usr/lib/ocaml/compiler-libs/ocamlbytecomp.cma /usr/lib/ocaml/compiler-libs/ocamltoplevel.cma /home/ryan/.opam/system/lib/findlib/findlib.cma /home/ryan/.opam/system/lib/findlib/findlib_top.cma /home/ryan/.opam/system/lib/result/result.cma /home/ryan/.opam/system/lib/lwt/lwt.cma /usr/lib/ocaml/unix.cma /usr/lib/ocaml/bigarray.cma /usr/lib/ocaml/threads/threads.cma /home/ryan/.opam/system/lib/lwt/unix/lwt_unix.cma /home/ryan/.opam/system/lib/lwt_log/core/lwt_log_core.cma /home/ryan/.opam/system/lib/lwt_log/lwt_log.cma /home/ryan/.opam/system/lib/react/react.cma /home/ryan/.opam/system/lib/lwt_react/lwt_react.cma /home/ryan/.opam/system/lib/camomile/default_config/camomileDefaultConfig.cma /home/ryan/.opam/system/lib/camomile/library/camomileLibrary.cma /home/ryan/.opam/system/lib/camomile/lib_default/camomileLibraryDefault.cma /home/ryan/.opam/system/lib/camomile/dyn/camomileLibraryDyn.cma /home/ryan/.opam/system/lib/camomile/camomile_yuge.cma /home/ryan/.opam/system/lib/zed/zed.cma /home/ryan/.opam/system/lib/lambda-term/lambda_term.cma /home/ryan/.opam/system/lib/utop/uTop.cma src/rec.cma src/.utop/utop.cmo)
