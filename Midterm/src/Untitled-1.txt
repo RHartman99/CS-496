@@ -1,4 +1,5 @@
-interp "let z = 0 
-        in let prod = proc(x) { proc(y) {x*y} }
-        in letrec f(n) = if zero?(n) then 1 else ((prod n) (f (n-1))) 
-        in f";;
+let p = {ssn = 10; age <= 30}
+in begin 
+    p.age <= 31;
+    p.age
+    end

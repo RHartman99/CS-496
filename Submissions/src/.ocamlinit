@@ -1,6 +1,6 @@
-open Rec.Interp;;
-open Rec.Ds;;
-open Rec.Ast;;
+open Explicit_refs.Interp;;
+open Explicit_refs.Ds;;
+open Explicit_refs.Ast;;
 (* Added by OPAM. *)
 let () =
   try Topdirs.dir_directory (Sys.getenv "OCAML_TOPLEVEL_PATH")
